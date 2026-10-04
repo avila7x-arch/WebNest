@@ -1,0 +1,17 @@
+node_modules/
+out/
+release/
+dist/
+integrated_extensions/
+session-*.md
+.env
+.env.*
+*.pfx
+*.p12
+*.pem
+*.key
+*.cer
+*.crt
+.DS_Store
+Thumbs.db
+npm-debug.log*

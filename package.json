@@ -1,0 +1,68 @@
+{
+  "name": "webnest",
+  "version": "0.1.1",
+  "private": true,
+  "author": "Juan Avila",
+  "description": "Administra sitios web como aplicaciones con perfiles aislados.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avila7x-arch/WebNest.git"
+  },
+  "type": "module",
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "typecheck": "tsc --noEmit",
+    "dist:win": "pnpm build && electron-builder --win nsis --publish never"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.9",
+    "extract-zip": "^2.0.1",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^44.5.1",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^3.0.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
+  },
+  "build": {
+    "appId": "com.webnest.desktop",
+    "productName": "WebNest",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "out/**/*",
+      "package.json"
+    ],
+    "win": {
+      "signAndEditExecutable": true,
+      "target": [
+        "nsis"
+      ]
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "avila7x-arch",
+      "repo": "WebNest",
+      "releaseType": "release"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "publish": null
+    }
+  }
+}
